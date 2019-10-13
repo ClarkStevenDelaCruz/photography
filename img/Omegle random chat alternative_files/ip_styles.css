@@ -1,0 +1,1027 @@
+html, body {
+  min-height: 100%;
+}
+
+body {
+  height: 100% !important;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 400px;
+  background: url(/images/logo.svg) 50% 35% no-repeat, url(/images/preloader.svg) 50% calc(35% + 250px) no-repeat #fff;
+}
+
+.col-xl-6, .col-xl-3 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1280px) {
+  .col-xl-6 {
+    width: 50%;
+    float: left;
+  }
+
+  .col-xl-3 {
+    width: 25%;
+    float: left;
+  }
+}
+
+#ipNavbar {
+  margin: 0;
+  background: rgba(255, 255, 255, 1.0);
+  border: none;
+  margin-bottom: -90px;
+  height: 90px;
+}
+
+#ipNavbar .navbar-brand {
+  width: 220px;
+  height: 65px;
+  padding: 0;
+  margin-left: 42px;
+  margin-top: 8px;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+@media only screen and (max-width: 375px) {
+  #ipNavbar .navbar-brand {
+    width: 159px;
+    height: 32px;
+    margin-top: 16px;
+  }
+}
+
+#ipNavbar .navbar-brand img {
+  display:  inline-block;
+  vertical-align: middle;
+  margin-right:  18px;
+}
+
+#ipNavbar.affix {
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#ipNavbar ul {
+  float: right;
+  height: 90px;
+  margin-right: 62px;
+}
+
+#ipNavbar ul li a {
+  height: 90px;
+  line-height: 90px;
+  vertical-align: middle;
+  font-size: 26px;
+  padding: 0;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+#ipNavbar ul>li>a {
+  color:  #5f5f5f;
+  font-family: 'PT Sans', sans-serif;
+}
+
+#ipNavbar ul.nav>.active>a {
+  background: none;
+  color:  #389a73;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background: none;
+}
+
+.nav>li>a:hover {
+  color:  #389a73 !important;
+}
+
+#ipNavbar .navbar-toggle {
+  margin-top: 23px;
+  border: none;
+}
+
+#ipNavbar .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+#ipNavbar .navbar-toggle .icon-bar {
+    background-color: #389a73;
+}
+
+#ipNavbar .navbar-toggle:hover .icon-bar {
+    background-color: #5f5f5f;
+}
+
+@media only screen and (max-width: 1100px) {
+  #ipNavbar ul {
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0 0 2000px;
+    margin: 0;
+    margin-top: 15px;
+    overflow: hidden;
+    display: none;
+  }
+
+  #ipNavbar.affix ul { display: block; }
+
+  #navbarCollapse.opened ul {
+    transform: translateX(0);
+    display: block;
+  }
+
+  #ipNavbar ul li {
+    float: none;
+    height: auto;
+  }
+
+  html.can-touch #ipNavbar ul li a {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  #ipNavbar .navbar-header {
+    float: none;
+  }
+
+  #ipNavbar .navbar-toggle {
+    display: inline-block;
+  }
+
+}
+
+.ip-header {
+  font-size: 48px;
+  line-height: 46px;
+  font-family: 'Amaranth', sans-serif;
+  text-align: center;
+  color: #e05e36;
+}
+
+@media only screen and (max-width: 991px) {
+  .ip-header { font-size: 38px; }
+}
+
+@media only screen and (max-width: 768px) {
+  .ip-header { font-size: 36px; }
+}
+
+@media only screen and (max-width: 479px) {
+  .ip-header { font-size: 32px; }
+}
+
+#ip-about h3, #ip-features h3 {
+  font-size: 26px;
+  line-height: 30px;
+  color: #e05e36;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#ip-about p, #ip-features p {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  color: #5f5f5f;
+  margin-top: 17px;
+  margin-bottom: 17px;
+}
+
+/*---------------------ip-about--------------------------------*/
+
+#ip-about {
+  --k: 1;
+  --text-koef: var(--k);
+  width: 100%;
+  background-image: url("../images/ip/omegle-alternative-bg.png");
+  background-color: #f3f3f3;
+  background-position: 0 center;
+  margin-top: 90px;
+  overflow: hidden;
+}
+
+#ip-about .container {
+  margin-top: 48px;
+  margin-bottom: 44px;
+}
+
+#ip-about #omelge-like-bg {
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+  margin-top: 45px;
+  overflow: hidden;
+  text-align: center;
+}
+
+#ip-about #omelge-like-bg img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 9px;
+}
+
+#ip-about .right-col p {
+  font-size: 26px;
+  line-height: 36px;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1001px){
+  #ip-about .right-col p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 768px) {
+  #ip-about .right-col p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+a.ip-text-link {
+  color: #389a73;
+}
+
+#ip-about .right-col p:first-child {
+  margin-top: 50px;
+}
+
+#ip-about strong {
+  font-weight: bold;
+}
+
+#ip-about .ip-app-btn-wrap {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+#ip-about .app-btn {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 255px;
+    height: 75px;
+    padding-bottom: 0;
+    background-size: contain;
+}
+
+#ip-about .alt-chat-app {
+  width: calc(573px * var(--k));
+  height: calc(675px * var(--k));
+  background-image: url("../images/ip/omegle-alternative-chat-app.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+#ip-about .grid h3 {
+  font-size: calc(26px * var(--text-koef));
+  line-height: calc(30px * var(--text-koef));
+  margin-top: calc(30px * var(--text-koef));
+  margin-bottom: calc(30px - (30px * var(--text-koef)));
+}
+
+#ip-about .grid p {
+  font-size: calc(20px * var(--text-koef));
+  line-height: calc(30px * var(--text-koef));
+  margin-top: calc(17px * var(--text-koef));
+  margin-bottom: calc(17px * var(--text-koef));
+}
+
+#ip-about .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: calc(300px * var(--k)) auto;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+#ip-about .grid .grid-cell {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#ip-about .start-btn-box {
+  --width: calc(425px * var(--k));
+  --height: calc(116px * var(--k));
+  width: var(--width, 425px);
+  height: var(--height, 116px);
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  margin-left: calc(var(--width) / -2);
+  position: absolute;
+}
+
+#ip-about .start-btn-box .btn {
+  --font-size: calc(52px * var(--k));
+  font-size: var(--font-size, 52px);
+}
+
+@media only screen and (max-width: 1060px) {
+
+  #ip-about .grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #ip-about .alt-chat-app {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  #ip-about .ip-app-btn-wrap {
+    margin-top: 50px;
+  }
+
+  #ip-about h3 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1061px){
+  #ip-about {
+    --k: 0.8;
+    --text-koef: 0.8;
+  }
+
+  #ip-about .grid {
+    grid-template-rows: 220px auto;
+  }
+
+  #ip-about .grid p, #ip-about .grid h3 {
+    max-width: 455px;
+  }
+
+  #ip-about .alt-chat-app {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 575px){
+  #ip-about {
+    --k: 0.7;
+    --text-koef: 1;
+  }
+}
+
+@media screen and (max-width: 410px){
+  #ip-about {
+    --k: 0.6;
+    --text-koef: 1;
+  }
+}
+
+@media screen and (max-width: 350px){
+  #ip-about {
+    --k: 0.55;
+    --text-koef: 1;
+  }
+}
+
+/*---------------------------FEATURES-----------------------------------*/
+
+#ip-features {
+  width: 100%;
+}
+
+#ip-features .white-features-box {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+#ip-features .white-features-box .container {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#ip-features .white-features-box .row {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ip-feature-box {
+  width: 229px;
+  height: auto;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.ip-feature-box dt {
+  color: #6b6b6b;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 26px;
+  line-height: 28px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.ip-feature-box dd {
+  color: #6b6b6b;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 16px;
+  line-height: 24px;
+}
+
+.ip-feature-box dd.ico {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.ip-feature-box dd.ico.multilang {
+  margin-bottom: 68px;
+}
+
+#ip-features .gray-features-box {
+  width: 100%;
+  background-image: url("../images/ip/omegle-alternative-bg.png");
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+
+#ip-features .gray-features-box .container {
+  margin-bottom: 55px;
+}
+
+
+#ip-features .gray-features-box ul {
+  list-style: none;
+  margin-top: 31px;
+  margin-bottom: 31px;
+}
+
+#ip-features .gray-features-box ul li {
+  color: #6b6b6b;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 54px;
+  background-repeat: no-repeat;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  background-position: left 5px;
+  max-width: 895px;
+}
+
+#ip-features .gray-features-box ul li.real-face {
+  background-image: url("../images/ip/omegle-like-video-chat-real-face.svg");
+  background-size: 40px, 40px;
+}
+
+#ip-features .gray-features-box ul li.salut {
+  background-image: url("../images/ip/omegle-like-random-chat-salut.svg");
+  background-size: 35px, 40px;
+}
+
+#ip-features .gray-features-box ul li.anonymous {
+  background-image: url("../images/ip/omegle-alternative-anonymous-chat.svg");
+  background-size: 40px, 37px;
+}
+
+#ip-features .gray-features-box .big-btn-box {
+  width: 100%;
+  height: 97px;
+  position: relative;
+  margin-top: 60px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+#ip-features .gray-features-box .big-btn-box .btn {
+  width: 100%;
+  height: 100%;
+  max-width: 427px;
+  max-height: 97px;
+  margin: 0 auto;
+  font-size: 34px;
+  color: #5f5f5f;
+}
+
+#ip-features .gray-features-box .btn.btn-main {
+  color: #ffffff;
+}
+
+.ip-tablet-box {
+  width: 656px;
+}
+
+.ip-tablet {
+  width: 656px;
+  height: 423px;
+  background-image: url("../images/ip/omegle-alternative-chat-tablet.png");
+  background-size: contain;
+  overflow: hidden;
+}
+
+.ip-tablet-screen {
+  width: 485px;
+  height: 328px;
+  overflow: hidden;
+  margin-top: 54px;
+  margin-left: 85px;
+}
+
+.ip-phone {
+  max-width: 295px;
+  max-height: 564px;
+  margin: 0 auto;
+  display: none;
+}
+
+@media screen and (max-width: 1280px){
+  .ip-tablet-box { width: 100%; }
+
+  .ip-tablet { margin: 0 auto; }
+
+  #ip-features .big-btn-box.gray-btn-box {
+    margin-top: 45px !important;
+    margin-bottom: 45px;
+  }
+
+  #ip-features .big-btn-box.start-btn-box:last-child {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  #ip-features h3 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .ip-tablet { display: none; }
+  .ip-phone { display: block; }
+}
+
+/*----------------------------------FAQ------------------------------------------*/
+
+#ip-faq, #ip-rules {
+  width: 100%;
+  background-image: url("../images/ip/omegle-alternative-bg.png");
+  padding-bottom: 40px;
+}
+
+#ip-faq .container, #ip-rules .container {
+  margin-top: 90px;
+}
+
+#ip-faq h1, #ip-rules h1 {
+  margin-top: 42px;
+  margin-bottom: 80px;
+}
+
+@media only screen and (max-width: 991px) {
+  h1.ip-header, h2.ip-header { font-size: 38px; }
+
+  #ip-faq h1, #ip-rules h1 {
+    margin-bottom: 64px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1.ip-header, h2.ip-header { font-size: 36px; }
+
+  #ip-faq h1, #ip-rules h1 {
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  h1.ip-header, h2.ip-header { font-size: 32px; }
+
+  #ip-faq h1, #ip-rules h1 {
+    margin-bottom: 56px;
+  }
+}
+
+.ip-chat-box {
+  height: 100%;
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ip-chat-box .msg {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+#ip-faq .ip-chat-box .msg .ava { background-size: cover; }
+
+#ip-faq .ip-chat-box .msg .couple {
+  min-width: 29px;
+  height: 31px;
+  background-image: url("../images/ip/couple.svg");
+}
+
+#ip-faq .ip-chat-box .msg .chatruletka {
+  min-width: 36px;
+  height: 32px;
+  background-image: url("../images/ip/omegle-like-video-chat.svg");
+}
+
+#ip-faq .ip-chat-box .msg .female {
+  min-width: 28px;
+  height: 30px;
+  background-image: url("../images/ip/female.svg");
+}
+
+#ip-faq .ip-chat-box .msg .male {
+  min-width: 29px;
+  height: 31px;
+  background-image: url("../images/ip/male.svg");
+}
+
+.ip-chat-box .msg figure.ip-q {
+  display: flex;
+  flex-direction: row;
+  margin-right: 54px;
+  transform: translateX(-100%);
+  opacity: 0;
+  width: 100%;
+}
+
+figure.ip-q[show=true] {
+  animation: fade-in-100-left 1.5s 0s ease-in-out both;
+}
+
+figure.ip-a[show=true] {
+  animation: fade-in-100-right 1.5s 0s ease-in-out both;
+}
+
+.ip-chat-box .msg-text {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 0px 5px 5px 5px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+  display: inline-block;
+  position: relative;
+}
+
+figure.ip-a .msg-text {
+  border-radius: 5px 0px 5px 5px;
+}
+
+.ip-q .msg-text h3, .ip-a .msg-text p, #ip-rules h3 {
+  color: #e05e36;
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  line-height: 30px;
+}
+
+.ip-q .msg-text::before {
+  content: ' ';
+  border-top: 16px solid #fff;
+  border-left: 13px solid transparent;
+  transform: translateX(-100%);
+  color: #ffffff;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.ip-q .ava {
+  margin-right: 25px;
+}
+
+.ip-a .ava {
+  margin-left: 25px;
+}
+
+.ip-chat-box .msg figure.ip-a {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 54px;
+  transform: translateX(0%);
+  opacity: 0;
+  width: 100%;
+}
+
+.ip-a .msg-text p {
+  color: #389a73;
+}
+
+.ip-a .msg-text p a {
+  color: #389a73;
+  text-decoration: underline;
+}
+
+.ip-a .msg-text::before {
+  content: ' ';
+  border-top: 16px solid #fff;
+  border-right: 13px solid transparent;
+  transform: translateX(100%);
+  color: #ffffff;
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+#ip-faq .big-btn-box {
+  width: 100%;
+  height: 97px;
+  position: relative;
+  margin-top: 60px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+#ip-faq .big-btn-box .btn {
+  width: 100%;
+  height: 100%;
+  max-width: 427px;
+  max-height: 97px;
+  margin: 0 auto;
+  font-size: 34px;
+  color: #ffffff;
+}
+
+@keyframes fade-in-100-left {
+  0%   { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0%); opacity: 1; }
+}
+@keyframes fade-in-100-right {
+  0%   { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0%); opacity: 1; }
+}
+
+@media screen and (max-width: 335px){
+  .ip-q .msg-text h3, .ip-a .msg-text p, #ip-rules h3 {
+    font-size: 16px;
+  }
+}
+
+/*-------------------------------RULES---------------------------*/
+
+#ip-rules h3 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#ip-rules ul {
+    list-style: disc;
+}
+
+#ip-rules ul li, #ip-rules p {
+    color: #6b6b6b;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 15px;
+}
+
+#ip-rules ul li {
+    margin-left: 43px;
+    padding-left: 13px;
+}
+
+#ip-rules section {
+    margin-top: 10px;
+}
+
+#ip-rules section.highlighted {
+    background-color: #ffffff;
+    color: #333333;
+    border: 2px solid #e5e5e5;
+    padding: 0px 10px 10px 10px;
+}
+
+/*----------------------------------------FOOTER---------------------------------------------------------*/
+
+footer {
+    width: 100%;
+    min-height: 140px;
+    background: #ffffff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ip-soc-links {
+  display: flex;
+  justify-content: center;
+  margin: 51px 0;
+  min-width: 215px;
+}
+
+.ip-soc-links a {
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+
+a#ip-googleplus {
+  background: url("../images/ip/omegle-like-googleplus.svg");
+}
+
+a#ip-youtube {
+  background: url("../images/ip/omegle-like-youtube.svg");
+}
+
+a#ip-instagram {
+  background: url("../images/ip/omegle-like-instagram.svg");
+}
+
+a#ip-facebook {
+  background: url("../images/ip/omegle-like-facebook.svg");
+}
+
+footer .ip-app-btn-wrap {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+footer .app-btn {
+  margin: 30px 5px 0;
+  width: 255px;
+  height: 75px;
+  padding-bottom: 0;
+  background-size: contain;
+}
+
+footer .app-btn:hover, #ip-about .app-btn:hover { opacity: 0.7; }
+
+.footer-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 60px 10px;
+}
+.footer-menu li {
+  border-right: 1px solid #5f5f5f;
+  font-size: 16px;
+  padding: 0 10px;
+}
+.footer-menu li:last-child {
+  border-right: none;
+}
+.footer-menu li a {
+  color: #389a73;
+  cursor: pointer;
+}
+
+.ip-copyright {
+  color: #5f5f5f;
+  font-size: 16px;
+  margin: 12px 0;
+  font-family: 'PT Sans', sans-serif;
+}
+.ip-copyright:first-child {
+  margin-top: 32px;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  .big-btn-box {
+    width: 300px;
+  }
+
+  #ip-features .gray-features-box .big-btn-box .btn {
+    font-size: 30px;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+  .big-btn-box {
+    width: 300px;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+  .big-btn-box {
+    width: 290px;
+  }
+}
+
+/* PRIVACY POLICY */
+
+.privacy-policy, .refund-policy {
+  font-size: 18px;
+  line-height: 30px;
+  font-family: 'PT Sans', sans-serif;
+}
+.privacy-policy ol {
+  counter-reset: item;
+}
+.privacy-policy li {
+  display: block;
+  list-style: decimal;
+  padding-left: 60px;
+  position: relative;
+  color: #6b6b6b;
+}
+.privacy-policy li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  position: absolute;
+  left: 0;
+}
+.privacy-policy>ol>li {
+  color: #e05e36;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+.privacy-policy>ol>li:last-child {
+  margin-bottom: 0;
+}
+.privacy-policy>ol>li:before {
+  content: counters(item, ".") ". ";
+}
+.privacy-policy>ol>li>ol {
+  color: black;
+  font-weight: normal;
+  font-size: 18px;
+  margin-left: -60px;
+}
+.privacy-policy>ol>li>ol>li {
+  margin: 1em 0;
+}
+.privacy-policy>ol>li>ol>li:last-child {
+  margin-bottom: 0;
+}
+.privacy-policy>ol>li>ol>li:before {
+}
+.privacy-policy p, .refund-policy p {
+  font-weight: normal;
+}
+
+.refund-policy ol {
+  counter-reset: item;
+}
+.refund-policy li {
+  display: block;
+  list-style: decimal;
+  padding-left: 60px;
+  position: relative;
+  color: #6b6b6b;
+
+}
+.refund-policy li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  position: absolute;
+  left: 0;
+}
+.refund-policy>ol>li {
+  margin-bottom: 30px;
+}
+.refund-policy>ol>li:last-child {
+  margin-bottom: 0;
+}
+.refund-policy>ol>li>ol {
+  margin-top: 10px;
+}
+
+.contacts a {
+  color: #389a73;
+}

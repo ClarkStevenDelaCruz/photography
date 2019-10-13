@@ -1,0 +1,8 @@
+﻿(function(){
+    window.config = {
+        origin: 1001,
+        android_app: 'ometv',
+        vertical_layout: true
+    };
+    $('.copyright').html(new Date().getFullYear());
+})();

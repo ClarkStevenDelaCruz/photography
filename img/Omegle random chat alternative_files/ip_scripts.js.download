@@ -1,0 +1,128 @@
+$(document).ready(function () {
+    $navbar = $('#ipNavbar');
+    $navbar.affix({
+        offset: {
+            top: function () { return $('#app').height(); }
+        }
+    });
+
+    var hash = window.location.hash;
+
+    if(hash !== '') {
+       var offset = $navbar.height();
+       if (window.location.href.indexOf('/rules') > -1) offset += 14
+       $('html, body').stop().animate({ scrollTop: $(hash).offset().top - offset }, 800)
+    }
+
+    if (isMobile()) {
+        $('html').addClass('is-mobile')
+
+        if ($('.ip-q').length > 0 && $('.ip-a').length > 0) {
+            $('.ip-q').attr('show', 'true');
+            $('.ip-a').attr('show', 'true');
+        }
+    } else {
+        setSkrollrDataParams($('.ip-countries'));
+        $.getScript('/js/skrollr.min.js', function () {
+            s = skrollr.init({
+                constants: {
+                    tablet_start: function () {
+                        if ($('.ip-tablet').length > 0) {
+                            return $('.ip-tablet').first().offset().top - $(window).height()
+                        } else return 0;
+                    },
+                    tablet_stop: function () {
+                        return $('footer').first().offset().top + $('footer').first().height() - $(window).height()
+                    }
+                }
+            });
+        })
+    }
+
+    if (getOS() == 'Android') {
+        $(".appstore").hide();
+    }
+    if (getOS() == 'iOS') {
+        $(".googleplay").hide();
+    }
+
+    $('a', $navbar).on('click', scrollToSection);
+
+    $('.ip-btn-start, .ip-btn-gray, a.ip-text-link').on('click', scrollToSection);
+
+    $navbarToggleButton = $('button.navbar-toggle');
+    $navbarCollapse = $("#navbarCollapse");
+
+    $navbarToggleButton.on('click', function (event) {
+        $navbarCollapse.toggleClass('opened');
+        $navbarToggleButton.toggleClass('opened');
+    })
+
+    $('body').on('click', function (event) {
+        if ($(event.target).closest("button.navbar-toggle").length > 0) return false;
+        $navbarCollapse.removeClass('opened');
+        $navbarToggleButton.removeClass('opened');
+    })
+});
+
+function setSkrollrDataParams(elem) {
+    if ($(window).width() >= 1280 && $(window).width() <= 1300) {
+        elem.attr('data-_tablet_stop', "margin-top: -644px;");
+    }
+}
+
+function scrollToSection(event) {
+    var start_roulette = false;
+    if ($(this).is('.btn-main')) {
+        this.href = location.href.replace("faq/", "index.html#app");
+        this.hash = "#app";
+        start_roulette = true
+    }
+    if ($(this).is('.btn-gray')) {
+        window.location = "/faq";
+        return;
+    }
+    if (this.hash == '') return;
+    if (this.href.split('#')[0] !== window.location.href.split('#')[0]) window.location = this.href;
+    event.preventDefault();
+    var hash = this.hash;
+    var offset = $navbar.height();
+    $('html, body').animate({
+        scrollTop: $(hash).offset().top - offset
+    }, 800, function () {
+        if (history.pushState) {
+            history.pushState(null, null, hash);
+        }
+        else {
+            location.hash = hash;
+        }
+        if (start_roulette) window.roulette.start();
+    });
+}
+
+function getOS() {
+    var userAgent = window.navigator.userAgent,
+        platform = window.navigator.platform,
+        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+        iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+        os = null;
+
+    if (macosPlatforms.indexOf(platform) !== -1) {
+        os = 'Mac OS';
+    } else if (iosPlatforms.indexOf(platform) !== -1) {
+        os = 'iOS';
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+        os = 'Windows';
+    } else if (/Android/.test(userAgent)) {
+        os = 'Android';
+    } else if (!os && /Linux/.test(platform)) {
+        os = 'Linux';
+    }
+
+    return os;
+}
+
+function isMobile() {
+    return (/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera);
+}
